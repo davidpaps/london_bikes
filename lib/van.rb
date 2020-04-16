@@ -6,7 +6,11 @@ class Van
     @trailer = []
   end
 
-  def pick_up_bike(bike)
+  def pick_up(bike)
     @trailer << bike
+  end
+
+  def drop_off(bike)
+    @trailer.pop
   end
 end
