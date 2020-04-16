@@ -13,12 +13,14 @@ class DockingStation
   end
 
   def release_bike
-   fail 'no bikes avaliable' if empty?
-   @dock.pop
+    raise 'no bikes avaliable' if empty?
+
+    @dock.pop
   end
 
   def dock_bike(bike)
-    fail 'dock full' if full?
+    raise 'dock full' if full?
+
     @dock << bike
   end
 

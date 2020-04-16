@@ -35,7 +35,7 @@ describe DockingStation do
     end
 
     it 'raises an error when dock is empty' do
-      expect {subject.release_bike}.to raise_error 'no bikes avaliable'
+      expect { subject.release_bike }.to raise_error 'no bikes avaliable'
     end
   end
 
@@ -50,8 +50,8 @@ describe DockingStation do
     end
 
     it 'raises an error if dock is full' do
-      DockingStation::DEFAULT_CAPACITY.times {subject.dock_bike(bike)}
-      expect {subject.dock_bike(bike)}.to raise_error 'dock full'
+      DockingStation::DEFAULT_CAPACITY.times { subject.dock_bike(bike) }
+      expect { subject.dock_bike(bike) }.to raise_error 'dock full'
     end
   end
 end
