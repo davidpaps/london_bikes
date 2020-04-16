@@ -23,18 +23,25 @@ describe DockingStation do
     end
 
     it 'releases a bike' do
+      bike = double('bike', { working?: true })
       subject.dock_bike(bike)
       expect(subject.release_bike).to eq(bike)
     end
 
     it 'releases a working bike' do
-      bike = double('bike', { working?: 'true' })
+      bike = double('bike', { working?: true })
       subject.dock_bike(bike)
       subject.release_bike
-      expect(bike.working?).to eq('true')
+      expect(bike.working?).to eq(true)
     end
 
     it 'raises an error when dock is empty' do
+      expect { subject.release_bike }.to raise_error 'no bikes avaliable'
+    end
+
+    it 'only releases working bikes' do
+      bike = double('bike', { working?: false })
+      subject.dock_bike(bike)
       expect { subject.release_bike }.to raise_error 'no bikes avaliable'
     end
   end

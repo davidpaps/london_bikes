@@ -13,14 +13,12 @@ class DockingStation
   end
 
   def release_bike
-    raise 'no bikes avaliable' if empty?
-
+    raise 'no bikes avaliable' if empty? || broken?
     @dock.pop
   end
 
   def dock_bike(bike)
     raise 'dock full' if full?
-
     @dock << bike
   end
 
@@ -32,5 +30,9 @@ class DockingStation
 
   def empty?
     @dock.length <= 0
+  end
+
+  def broken?
+    !@dock[-1].working? 
   end
 end

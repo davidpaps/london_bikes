@@ -10,7 +10,7 @@ describe Bike do
       expect(subject).to respond_to(:working?)
     end
 
-    it ' working bikes released' do
+    it 'working bikes released' do
       expect(subject.working?).to eq(true)
     end
   end
@@ -18,7 +18,6 @@ describe Bike do
   describe '#report_broken' do
     it "flags a broken bike" do
       subject.report_broken
-      expect(subject.broken).to eq(true)
       expect(subject.working?).to eq(false)
     end
   end
