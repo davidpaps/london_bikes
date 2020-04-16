@@ -12,11 +12,13 @@ describe DockingStation do
     end
 
     it 'releases a bike' do
+      subject.dock_bike(bike)
       expect(subject.release_bike).to eq(bike)
     end
 
     it 'releases a working bike' do
       bike = double('bike', { working?: 'true' })
+      subject.dock_bike(bike)
       subject.release_bike
       expect(bike.working?).to eq('true')
     end
@@ -24,7 +26,7 @@ describe DockingStation do
 
   describe '#dock_bike' do
     it 'docking station responds to the method' do
-      expect(subject).to respond_to(:dock_bike)
+      expect(subject).to respond_to(:dock_bike).with(1).argument
     end
 
     it 'docks a bike' do
