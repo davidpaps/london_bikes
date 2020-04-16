@@ -1,6 +1,10 @@
 # London Bikes
 
-A simple Test Driven Object Orientated Programming app, simulating the Santender Cycles around London - functions via the command line.
+A simple Test Driven Object Orientated Programming app, simulating the Santender Cycles around London - functions via the command line. Showcases good coding prncipals: Encapsulation, DRY, SRP, TDD. Built on the following requirements:
+
+---
+
+## User Stories
 
 ```
 As a person,
@@ -67,3 +71,21 @@ As a maintainer of the system,
 So that I can manage broken bikes and not disappoint users,
 I'd like docking stations to accept returning bikes (broken or not).
 ```
+
+```
+As a maintainer of the system,
+So that I can manage broken bikes and not disappoint users,
+I'd like vans to take broken bikes from docking stations and deliver them to garages to be fixed.
+```
+
+```
+As a maintainer of the system,
+So that I can manage broken bikes and not disappoint users,
+I'd like vans to collect working bikes from garages and distribute them to docking stations.
+```
+
+---
+
+## How to Run
+
+**Testing**

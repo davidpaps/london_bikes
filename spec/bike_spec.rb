@@ -11,6 +11,7 @@ describe Bike do
     end
 
     it 'working bikes released' do
+      expect(subject.working).to eq(true)
       expect(subject.working?).to eq(true)
     end
   end
