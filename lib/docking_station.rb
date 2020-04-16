@@ -10,7 +10,8 @@ class DockingStation
   end
 
   def release_bike
-    @dock.pop
+   fail 'no bikes avaliable' if @dock.length <=0 
+   @dock.pop
   end
 
   def dock_bike(bike)
