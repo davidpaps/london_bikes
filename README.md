@@ -104,16 +104,22 @@ This will require the files you need to instantiate new Docking Stations, Bikes,
 
 ```
 bike = Bike.new
-dockingstation = DockingStation.new
+ds = DockingStation.new
 ```
 
-This will return 2 Hexadecimal numbers, indicating the creation of the new objects. You can then type in the following in the command line to action the objects accordingly:
+You can then type in the following in the command line to action the objects accordingly:
 
 ```
-dockingstation.dock(bike)
-dockingstation.release_bike
-bike.working?
+ds.dock_bike(bike)
+ds.release_bike
 bike.report_broken
+ds.dock_bike(bike)
+ds.release_bike
+ds.van.drop_off_broken
+ds.van.garage.fix_bike
+ds.van.pick_up_fixed
+ds.dock_repaired_bikes
+ds.release_bike
 ```
 
 ---
@@ -124,4 +130,4 @@ To run the test suite (RSpec), in the command line type:
 rspec
 ```
 
-This will display 11 passing tests with 100% coverage.
+This will display 22 passing tests with 100% coverage.
