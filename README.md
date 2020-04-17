@@ -1,6 +1,6 @@
 # London Bikes
 
-A simple Test Driven Object Orientated Programming app, simulating the Santender Cycles around London - functions via the command line. Showcases good coding prncipals: Encapsulation, DRY, SRP, TDD. Built on the following requirements:
+A simple Object Orientated app, simulating the Santender Cycles around London - functions via the command line. Test driven in Ruby with the RSpec library, this showcases good coding prncipals: Encapsulation, DRY, SRP, TDD. Built on the a set of user stories.
 
 ---
 
@@ -88,4 +88,40 @@ I'd like vans to collect working bikes from garages and distribute them to docki
 
 ## How to Run
 
-**Testing**
+Clone this repo, and from the command line navigate to the [_London Bikes_](london_bikes). In the command line type:
+
+```
+irb
+```
+
+This will start the Ruby REPL. Then type the following:
+
+```
+require './lib/docking_station'
+```
+
+This will require the files you need to instantiate new Docking Stations, Bikes, Vans and Garages. This can be done by the following commands:
+
+```
+bike = Bike.new
+dockingstation = DockingStation.new
+```
+
+This will return 2 Hexadecimal numbers, indicating the creation of the new objects. You can then type in the following in the command line to action the objects accordingly:
+
+```
+dockingstation.dock(bike)
+dockingstation.release_bike
+bike.working?
+bike.report_broken
+```
+
+---
+
+To run the test suite (RSpec), in the command line type:
+
+```
+rspec
+```
+
+This will display 11 passing tests with 100% coverage.

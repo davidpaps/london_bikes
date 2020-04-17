@@ -15,8 +15,13 @@ class DockingStation
   end
 
   def release_bike
-    raise 'no bikes avaliable' if empty? || broken?
-    broken? ? @van.pick_up(@dock.pop) : @dock.pop
+    raise 'no bikes avaliable' if empty? 
+    if broken?  
+      @van.pick_up(@dock.pop)  
+      raise 'no working bikes avaliable' 
+    else 
+      @dock.pop
+    end
   end
 
   def dock_bike(bike)

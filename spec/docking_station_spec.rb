@@ -45,7 +45,7 @@ describe DockingStation do
 
     it 'only releases working bikes' do
       allow(bike).to receive(:working?).and_return(false)
-      expect { subject.release_bike }.to raise_error 'no bikes avaliable'
+      expect { subject.release_bike }.to raise_error 'no working bikes avaliable'
     end
   end
 
