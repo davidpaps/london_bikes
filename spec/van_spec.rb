@@ -21,4 +21,23 @@ describe Van do
       expect(subject.trailer.length).to eq(0)
     end
   end
+
+  describe '#pick_up_fixed' do
+    
+    it 'pickes up fxed bikes from the garage' do
+      subject.pick_up_fixed
+      expect(subject.trailer.length).to eq(1)
+    end
+  end
+
+  describe '#drop_off_fixed' do
+
+    it 'drops off fixed bikes' do
+      subject.pick_up_fixed
+      subject.drop_off_fixed
+      expect(subject.trailer.length).to eq(0)
+
+    end
+  end
+
 end
