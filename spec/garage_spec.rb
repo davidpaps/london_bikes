@@ -20,6 +20,13 @@ describe Garage do
       subject.fix_bike
       expect(bike.working?).to eq(true)
     end
-    
+  end
+
+  describe '#load_bike' do
+    it 'puts a bike back in the van' do
+      subject.unload_bike(bike)
+      subject.load_bike
+      expect(subject.workshop.length).to eq (0)
+    end
   end
 end

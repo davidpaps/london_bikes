@@ -9,11 +9,20 @@ class Van
     @garage = garage
   end
 
-  def pick_up(bike)
+  def pick_up_broken(bike)
     @trailer << bike
   end
 
-  def drop_off(bike)
+  def drop_off_broken
     @garage.unload_bike(@trailer.pop)
   end
+
+  def pick_up_fixed
+    @trailer << @garage.load_bike
+  end
+
+  def drop_off_fixed
+    @trailer.pop
+  end
+
 end

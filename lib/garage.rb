@@ -1,4 +1,4 @@
-require_relative 'bike'
+
 
 class Garage
 
@@ -16,7 +16,7 @@ class Garage
     @workshop[-1].fix
   end
 
-  # def load_bike
-  #   @workshop.pop
-  # end
+  def load_bike
+    @workshop.pop
+  end
 end
