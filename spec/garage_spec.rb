@@ -7,9 +7,10 @@ describe Garage do
 
   describe '#fix_bike' do
     it 'fixes a bike' do
-      allow(bike).to receive(:working?).and_return(false)
       allow(bike).to receive(:working?).and_return(true)
-      subject.fix_bike(bike)
+      allow(bike).to receive(:fix)
+      subject.unload_bike(bike)
+      subject.fix_bike
       expect(bike.working?).to eq(true)
     end
     
