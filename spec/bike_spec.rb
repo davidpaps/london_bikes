@@ -22,4 +22,12 @@ describe Bike do
       expect(subject.working?).to eq(false)
     end
   end
+
+  describe '#fix' do
+    it "fixes a broken bike" do
+      subject.report_broken
+      subject.fix
+      expect(subject.working).to eq(true)
+    end
+  end
 end
