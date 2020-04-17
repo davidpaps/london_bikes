@@ -64,4 +64,11 @@ describe DockingStation do
     end
   end
 
+  describe '#dock_repaired_bikes' do
+    it 'drops off repaired bikes from the van to the dock' do
+      subject.dock_repaired_bikes
+      expect(subject.dock.length).to eq(2)
+    end
+  end
+
 end
