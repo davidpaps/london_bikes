@@ -1,51 +1,26 @@
 # frozen_string_literal: true
 
 require_relative 'bike'
-require_relative 'van'
+require_relative 'bike_container'
 
 class DockingStation
-  attr_reader :dock, :capacity, :van
+  include BikeContainer
 
-  DEFAULT_CAPACITY = 20
-
-  def initialize(capacity = DEFAULT_CAPACITY, van = Van.new)
-    @dock = []
-    @capacity = capacity
-    @van = van
-  end
+  attr_reader :bikes
 
   def release_bike
-    raise 'no bikes avaliable' if empty?
-
-    if broken?
-      @van.pick_up_broken(@dock.pop)
-      raise 'no working bikes avaliable'
-    else
-      @dock.pop
-    end
+    raise 'No bikes avaliable' if working_bikes.empty?
+    bikes.delete(working_bikes.pop)
   end
 
   def dock_bike(bike)
-    raise 'dock full' if full?
-
-    @dock << bike
-  end
-
-  def dock_repaired_bikes
-    @dock << @van.drop_off_fixed
+    add_bike(bike)
   end
 
   private
 
-  def full?
-    @dock.length >= DEFAULT_CAPACITY
+  def working_bikes
+    bikes.reject { |bike| !bike.working? }
   end
 
-  def empty?
-    @dock.length <= 0
-  end
-
-  def broken?
-    !@dock[-1].working?
-  end
 end

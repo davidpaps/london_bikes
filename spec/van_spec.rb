@@ -9,7 +9,7 @@ describe Van do
   describe '#pick_up_broken' do
     it 'picks up a broken bike from a docking station' do
       subject.pick_up_broken(bike)
-      expect(subject.trailer.length).to eq(1)
+      expect(subject.bikes.length).to eq(1)
     end
   end
 
@@ -17,14 +17,14 @@ describe Van do
     it 'drops off a bike' do
       subject.pick_up_broken(bike)
       subject.drop_off_broken
-      expect(subject.trailer.length).to eq(0)
+      expect(subject.bikes.length).to eq(0)
     end
   end
 
   describe '#pick_up_fixed' do
     it 'pickes up fxed bikes from the garage' do
       subject.pick_up_fixed
-      expect(subject.trailer.length).to eq(1)
+      expect(subject.bikes.length).to eq(1)
     end
   end
 
@@ -32,7 +32,7 @@ describe Van do
     it 'drops off fixed bikes' do
       subject.pick_up_fixed
       subject.drop_off_fixed
-      expect(subject.trailer.length).to eq(0)
+      expect(subject.bikes.length).to eq(0)
     end
   end
 end

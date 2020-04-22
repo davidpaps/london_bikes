@@ -1,21 +1,24 @@
 # frozen_string_literal: true
 
 class Garage
-  attr_reader :workshop
+  attr_reader :bikes, :capacity
 
-  def initialize
-    @workshop = []
+  DEFAULT_CAPACITY = 20
+
+  def initialize(capacity = DEFAULT_CAPACITY)
+    @bikes = []
+    @capacity = capacity
   end
 
   def unload_bike(bike)
-    @workshop << bike
+    @bikes << bike
   end
 
   def fix_bike
-    @workshop[-1].fix
+    @bikes[-1].fix
   end
 
   def load_bike
-    @workshop.pop
+    @bikes.pop
   end
 end
