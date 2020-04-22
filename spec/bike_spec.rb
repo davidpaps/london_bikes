@@ -17,14 +17,14 @@ describe Bike do
   end
 
   describe '#report_broken' do
-    it "flags a broken bike" do
+    it 'flags a broken bike' do
       subject.report_broken
       expect(subject.working?).to eq(false)
     end
   end
 
   describe '#fix' do
-    it "fixes a broken bike" do
+    it 'fixes a broken bike' do
       subject.report_broken
       subject.fix
       expect(subject.working).to eq(true)

@@ -1,17 +1,16 @@
-
+# frozen_string_literal: true
 
 class Garage
-
   attr_reader :workshop
 
- def initialize
-  @workshop = []
- end
+  def initialize
+    @workshop = []
+  end
 
- def unload_bike(bike)
-  @workshop << bike
- end
- 
+  def unload_bike(bike)
+    @workshop << bike
+  end
+
   def fix_bike
     @workshop[-1].fix
   end

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'garage'
 
 describe Garage do
-  
   let(:subject) { described_class.new }
   let(:bike) { double(:bike) }
 
@@ -26,7 +27,7 @@ describe Garage do
     it 'puts a bike back in the van' do
       subject.unload_bike(bike)
       subject.load_bike
-      expect(subject.workshop.length).to eq (0)
+      expect(subject.workshop.length).to eq 0
     end
   end
 end

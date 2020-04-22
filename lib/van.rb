@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require_relative 'garage'
 
 class Van
-
   attr_reader :trailer, :garage
 
   def initialize(garage = Garage.new)
@@ -24,5 +25,4 @@ class Van
   def drop_off_fixed
     @trailer.pop
   end
-
 end

@@ -70,5 +70,4 @@ describe DockingStation do
       expect(subject.dock.length).to eq(2)
     end
   end
-
 end

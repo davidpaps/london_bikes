@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Bike
-
   attr_reader :working
   def initialize
     @working = true
@@ -18,5 +17,4 @@ class Bike
   def fix
     @working = true
   end
-
 end
