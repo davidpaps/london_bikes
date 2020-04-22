@@ -1,31 +1,18 @@
 # frozen_string_literal: true
 
 require_relative 'garage'
+require 'support/shared_examples_for_bike_container'
 
 class Van
-  attr_reader :bikes, :garage, :capacity
+  include BikeContainer
 
-  DEFAULT_CAPACITY = 20
+  attr_reader :bikes
 
-  def initialize(capacity = DEFAULT_CAPACITY, garage = Garage.new)
-    @capacity = capacity
-    @bikes = []
-    @garage = garage
+  def pick_up(bike)
+    add_bike(bike)
   end
 
-  def pick_up_broken(bike)
-    @bikes << bike
-  end
-
-  def drop_off_broken
-    @garage.unload_bike(@bikes.pop)
-  end
-
-  def pick_up_fixed
-    @bikes << @garage.load_bike
-  end
-
-  def drop_off_fixed
-    @bikes.pop
+  def drop_off
+    bikes.pop
   end
 end
