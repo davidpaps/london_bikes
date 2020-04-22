@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'garage'
-require 'support/shared_examples_for_bike_container'
+require_relative 'bike_container'
 
 class Van
   include BikeContainer

@@ -1,17 +1,14 @@
 # frozen_string_literal: true
 
+require_relative 'bike_container'
+
 class Garage
-  attr_reader :bikes, :capacity
+  include BikeContainer
 
-  DEFAULT_CAPACITY = 20
-
-  def initialize(capacity = DEFAULT_CAPACITY)
-    @bikes = []
-    @capacity = capacity
-  end
+  attr_reader :bikes
 
   def unload_bike(bike)
-    @bikes << bike
+    add_bike(bike)
   end
 
   def fix_bike

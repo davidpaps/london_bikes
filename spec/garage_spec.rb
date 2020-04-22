@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'garage'
+require 'support/shared_examples_for_bike_container'
 
 describe Garage do
   let(:subject) { described_class.new }
@@ -30,4 +31,6 @@ describe Garage do
       expect(subject.bikes.length).to eq 0
     end
   end
+
+  it_behaves_like BikeContainer
 end
