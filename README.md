@@ -1,6 +1,6 @@
 # London Bikes
 
-A simple Object Orientated app, simulating the Santender Cycles around London - functions via the command line. Test driven in Ruby with the RSpec library, this showcases good coding prncipals: Encapsulation, DRY, SRP, TDD. Built on the a set of user stories.
+A simple Object Orientated app, simulating the Santender Cycles around London - functions via the command line. Test driven in Ruby with the RSpec library, this showcases good coding prncipals: Encapsulation, DRY, SRP, TDD. Built on the a set of user stories. Once the user story requirements were met, modules were used as mixins to DRY out the code further, as many classes shared duplicate code. This showcases good Object Composition. The 'Shared Examples' feature of RSpec were also used to feature test the use of modules.
 
 ---
 
@@ -105,6 +105,8 @@ This will require the files you need to instantiate new Docking Stations, Bikes,
 ```
 bike = Bike.new
 ds = DockingStation.new
+van = Van.new
+garage = Garage.new
 ```
 
 You can then type in the following in the command line to action the objects accordingly:
@@ -113,12 +115,12 @@ You can then type in the following in the command line to action the objects acc
 ds.dock_bike(bike)
 ds.release_bike
 bike.report_broken
-ds.dock_bike(bike)
-ds.release_bike
-ds.van.drop_off_broken
-ds.van.garage.fix_bike
-ds.van.pick_up_fixed
-ds.dock_repaired_bikes
+van.pick_up(bike)
+van.drop_off
+garage.unload_bike(bike)
+garage.fix_bike
+garage.load_bike
+ds.dock_bike
 ds.release_bike
 ```
 
@@ -130,4 +132,4 @@ To run the test suite (RSpec), in the command line type:
 rspec
 ```
 
-This will display 22 passing tests with 100% coverage.
+This will display 45 passing tests with 100% coverage.
