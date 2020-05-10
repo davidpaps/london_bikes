@@ -91,6 +91,12 @@ I'd like vans to collect working bikes from garages and distribute them to docki
 Clone this repo, and from the command line navigate to the [_London Bikes_](london_bikes). In the command line type:
 
 ```
+bundler
+```
+
+This will install the required gems. Then in the command line type in:
+
+```
 irb
 ```
 
